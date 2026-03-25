@@ -54,13 +54,14 @@ void Server::run() {
     v_server_fd.revents = 0;
     _fds.push_back(v_server_fd);
 
+    /*
     int poll_count = poll(&_fds[0], _fds.size(), 1000); 
     
     if (poll_count < 0) {
         // Si poll falla por una señal (Ctrl+C), no es un error real
         return;
     }
-
+*/
     while (true) {
         // Usamos &_fds[0] (o _fds.data() en C++11) para pasar el puntero al array interno
         if (poll(&_fds[0], _fds.size(), -1) == -1) {
