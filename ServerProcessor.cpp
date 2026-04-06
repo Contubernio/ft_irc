@@ -128,7 +128,7 @@ void Server::executeCommand(Client* client, std::string message, size_t &i)
     else if (cmd == "PART")    handlePart(client, message);
     else if (cmd == "LIST")    handleList(client, message);
     else if (cmd == "MODE")    handleMode(client, message);
-    else if (cmd == "NOTICE") handleNotice(client, message);
+    else if (cmd == "NOTICE")  handleNotice(client, message);
     else if (cmd == "PING") 
     {
         std::string token;
